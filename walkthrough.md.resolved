@@ -1,0 +1,58 @@
+# Itkan Automotive Website — Walkthrough
+
+## What Was Built
+
+A complete 4-page corporate website for **Itkan Automotive** (automotive spare parts), inspired by [GSP Europe](https://gsp-europe.com).
+
+### Files Created
+
+| File | Description |
+|------|-------------|
+| [index.html](file:///Users/rayen/Documents/Projects/website/index.html) | Homepage — hero, products, stats, brands, CTA, footer |
+| [about.html](file:///Users/rayen/Documents/Projects/website/about.html) | About — company intro, 6 core values, timeline |
+| [products.html](file:///Users/rayen/Documents/Projects/website/products.html) | Products — 6 detailed category cards |
+| [contact.html](file:///Users/rayen/Documents/Projects/website/contact.html) | Contact — form + info cards |
+| [styles.css](file:///Users/rayen/Documents/Projects/website/styles.css) | Full design system (dark theme, red accents) |
+| [script.js](file:///Users/rayen/Documents/Projects/website/script.js) | Animations, navbar, counters, mobile menu |
+| `assets/` | Generated product images and backgrounds |
+
+---
+
+## Screenshots
+
+### Homepage — Hero Section
+![Hero section with engine background and ITKAN branding](/Users/rayen/.gemini/antigravity/brain/f0f699f7-0209-42f4-ae61-84f0188716f8/hero_screenshot.png)
+
+### Homepage — Products Grid
+![Product category cards with professional images](/Users/rayen/.gemini/antigravity/brain/f0f699f7-0209-42f4-ae61-84f0188716f8/products_screenshot.png)
+
+### Homepage — Key Figures
+![Animated stats section: 50+ countries, 15K+ SKUs, 16 brands, 95%+ coverage](/Users/rayen/.gemini/antigravity/brain/f0f699f7-0209-42f4-ae61-84f0188716f8/stats_screenshot.png)
+
+### Contact Page — Form & Footer
+![Contact form with info cards and full footer](/Users/rayen/.gemini/antigravity/brain/f0f699f7-0209-42f4-ae61-84f0188716f8/contact_screenshot.png)
+
+### Full Site Recording
+![Full site walkthrough recording](/Users/rayen/.gemini/antigravity/brain/f0f699f7-0209-42f4-ae61-84f0188716f8/full_site_review_1772243857854.webp)
+
+---
+
+## Design Features
+
+- **Dark industrial theme** with black/dark-gray backgrounds and red (#e63946) accents
+- **Outfit + Inter** premium typography via Google Fonts
+- **Scroll-reveal animations** via IntersectionObserver
+- **Animated number counters** in the Key Figures section
+- **Brand marquee** with continuous infinite scroll for 16 car brands
+- **Glassmorphism** sticky navbar with backdrop blur on scroll
+- **Responsive layout** — mobile, tablet, and desktop breakpoints
+- **Hover micro-animations** on all cards and buttons
+
+## Running Locally
+
+```bash
+cd /Users/rayen/Documents/Projects/website
+npx -y http-server ./ -p 8080
+```
+
+Then open [http://localhost:8080](http://localhost:8080) in your browser.
