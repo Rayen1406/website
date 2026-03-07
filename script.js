@@ -228,8 +228,53 @@ function initContactForm() {
 
   if (!form || !resultDiv || !submitBtn) return;
 
+  // Add input event listeners to clear errors as user types
+  const requiredFields = form.querySelectorAll('[required]');
+  requiredFields.forEach(field => {
+    field.addEventListener('input', () => {
+      field.classList.remove('input-invalid');
+      const errorMsg = field.nextElementSibling;
+      if (errorMsg && errorMsg.classList.contains('error-message')) {
+        errorMsg.style.display = 'none';
+      }
+    });
+  });
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    let isValid = true;
+
+    // Custom validation
+    requiredFields.forEach(field => {
+      let fieldValid = true;
+
+      if (!field.value.trim()) {
+        fieldValid = false;
+      } else if (field.type === 'email') {
+        // Basic email validation regex
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(field.value.trim())) {
+          fieldValid = false;
+        }
+      }
+
+      const errorMsg = field.nextElementSibling;
+      if (!fieldValid) {
+        isValid = false;
+        field.classList.add('input-invalid');
+        if (errorMsg && errorMsg.classList.contains('error-message')) {
+          errorMsg.style.display = 'block';
+        }
+      } else {
+        field.classList.remove('input-invalid');
+        if (errorMsg && errorMsg.classList.contains('error-message')) {
+          errorMsg.style.display = 'none';
+        }
+      }
+    });
+
+    if (!isValid) return;
 
     const btnText = submitBtn.querySelector('.btn-text');
     const btnLoading = submitBtn.querySelector('.btn-loading');
